@@ -1,0 +1,34 @@
+I have a React.js app created by using create-react-app. It has a default functionality except for a created regexValidation and testRegexValidation functions. The testRegexValidation function is called when running a project. 
+The testRegexValidation function is responsible for testing the previously implemented regular expression implementation for the variety of sample inputs and edge cases: too short input, too long input, matching input length, missing uppercase, lowercase, special character, digit, excess whitespace characters in various positions. Make sure to call that function from the application’s entry point. 
+I need to add application description (1 paragraph, 2-5 Sentences) to README file.
+
+ChatGPT
+Sure! Here's a possible application description that you can add to your README file:
+
+"RegexValidation App is a React.js application that utilizes the create-react-app framework to provide a simple yet powerful regular expression validation feature. The app includes two key functions, regexValidation, and testRegexValidation. The regexValidation function is designed to check user input against a predefined regular expression pattern to ensure it meets specific criteria, such as uppercase, lowercase, special character, and digit requirements. On the other hand, the testRegexValidation function is responsible for rigorously testing the regexValidation function with a variety of sample inputs and edge cases, ensuring robustness and accuracy. This tool allows developers to easily implement and validate complex input restrictions, providing a more secure and user-friendly experience for their React applications."
+
+
+
+
+User
+I also need to add the Regex implementation description: 1 paragraph, 4-10 Sentences. 
+const regex = new RegExp(
+    '^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!"#$%&\'()*+,-./:;<=>?@\\[\\]^_`{|}~])[^\\s]{1,' +
+      maxLength +
+      '}$'
+ChatGPT
+The provided regular expression is a powerful implementation that enforces strict input validation rules for user data. Let's break down the regex:
+
+The regex starts with ^, indicating that the input string must start at the beginning.
+(?=.*[A-Z]) asserts that there must be at least one uppercase letter in the input string.
+(?=.*[a-z]) asserts that there must be at least one lowercase letter in the input string.
+(?=.*[0-9]) asserts that there must be at least one digit in the input string.
+(?=.*[!"#$%&\'()*+,-./:;<=>?@[\\]^_{|}~])` asserts that there must be at least one special character in the input string. The special characters are listed between the square brackets.
+[^\\s] is a negative character class that ensures there are no whitespace characters in the input string.
+{1, maxLength} specifies the minimum and maximum length of the input string, where maxLength is a variable representing the maximum allowed length.
+In summary, this regular expression enforces the following rules for input validation:
+
+The input must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.
+It cannot contain any whitespace characters.
+The length of the input string must be between 1 and the value specified by the maxLength variable.
+This regex is particularly useful for implementing strong password requirements or validating sensitive user data in a secure and reliable manner within React.js applications.
